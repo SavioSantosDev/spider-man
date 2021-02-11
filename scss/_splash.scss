@@ -1,0 +1,42 @@
+
+
+.splash {
+  position: absolute;top: 0; left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100vh;
+  background-color: $red-3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 200px;
+    
+    .spider-icon {
+      animation: logo-spiderman 12s ease infinite alternate;
+      stroke: $white-3;
+    }
+  
+    @media (max-width: 768px) { width: 100px; }
+  }
+}
+
+
+
+@keyframes logo-spiderman {
+  0% {
+    stroke-width: 0;
+    fill: transparent;
+    stroke-dasharray: 1 100;
+  }
+  25% {
+    stroke-width: 1;
+    fill: transparent;
+    stroke-dasharray: 100 0;
+  }
+  60%, 100% {
+    stroke-width: 0;
+    fill: $white-3;
+  }
+}

@@ -1,0 +1,65 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .8rem 2rem;
+  text-transform: uppercase;
+  display: flex;
+  transform: skew(-10deg);
+}
+
+.btn-primary {
+  background-color: $red-3;
+  position: relative;
+  transition: .4s ease;
+
+  &::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0; left: 0;
+    border-left: 4px solid $white-3;
+    border-top: 4px solid $white-3;
+    opacity: 0;
+    transition: .4s ease;
+  }
+  &::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0; right: 0;
+    border-right: 4px solid $white-3;
+    border-bottom: 4px solid $white-3;
+    opacity: 0;
+    transition: .4s ease;
+  }
+  
+  &:hover {
+    box-shadow: 
+      0 0 4px rgba($color: $red-3, $alpha: 1),
+      0 0 12px rgba($color: $red-3, $alpha: .8),
+      0 0 32px rgba($color: $red-3, $alpha: .6);
+    &::before, &::after{ opacity: 1; }
+  }
+}
+
+.btn-secondary {
+  border: 2px solid $red-3;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    background-color: $red-3;
+    transition: .4s ease;
+  }
+
+  &:hover {
+    &::after { width: 100%; }
+  }
+}
